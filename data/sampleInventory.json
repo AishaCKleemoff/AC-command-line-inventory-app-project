@@ -1,0 +1,25 @@
+[
+    {
+     "id": "eyGw",
+     "name": "Curly 14in",
+     "priceInCents": "4500",
+     "inStock": "yes",
+     "color": "1B"  
+    },
+
+    {
+        "id": "qpMz",
+        "name": "Yacky Straight 16in",
+        "priceInCents": "7500",
+        "inStock": "yes",
+        "color": "2"  
+       },
+
+       {
+        "id": "hdFa",
+        "name": "Afro-Puff 10in",
+        "priceInCents": "9500",
+        "inStock": "yes",
+        "color": "1B"  
+       }
+]

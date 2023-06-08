@@ -1,7 +1,7 @@
 {
   "name": "ac-command-line-inventory-app-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "With this project I'm putting together all I've learned so far, about JavaScript and building applications.I am building a Command-line Inventory Application. It's an application where employees can keep track of the inventory of a store. Employees can create new items, update items, see a list of items, see details of one item and delete items.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
