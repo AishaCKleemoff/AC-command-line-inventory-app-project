@@ -34,6 +34,14 @@ const run = () => {
             const foundItem = show(items, item)
             console.log(foundItem)
             break;
-        
+        case "update":
+            console.log(item)
+            updatedItems = update(items, item, process.argv[4]);
+            writeToFile = true;
+            break;
+        case "destroy":
+            updatedItems = destroy(items, item);
+            writeToFile = true;
+            break;
     }
 }
