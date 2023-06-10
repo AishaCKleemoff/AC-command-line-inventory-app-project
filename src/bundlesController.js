@@ -11,40 +11,40 @@ function create(bundles, bundleName) {
 }
 
 /*function index(bundles) {
-  return items.map((animals) => item.id + " " + item.name).join("\n");
+  return bundles.map((animals) => bundle.id + " " + bundle.name).join("\n");
 }
 
-function show(items, itemId) {
-  const foundItem = items.find((item) => item.id === itemId);
-  return foundItem.id + " " + foundItem.name;
+function show(bundles, bundleId) {
+  const foundBundle = bundles.find((bundle) => bundle.id === bundleId);
+  return foundBundle.id + " " + foundBundle.name;
 }
-function destroy(items, itemId) {
-  const index = items.findIndex((item) => item.id === itemId);
+function destroy(bundles, bundleId) {
+  const index = bundles.findIndex((bundle) => bundle.id === bundleId);
 
   if (index > -1) {
-    items.splice(index, 1);
-    console.log("Your item has been deleted");
+    bundles.splice(index, 1);
+    console.log("Your bundle has been deleted");
 
-    returnitems;
+    returnbundles;
   } else {
-    console.log("Item with that Id could not be found");
+    console.log("Bundle with that Id could not be found");
   }
 }
 
-function update(items, itemId, updatedItem) {
-    const index = items.findIndex((item) => item.id === itemId);
+function update(bundles, bundleId, updatedBundle) {
+    const index = bundles.findIndex((bundle) => bundle.id === bundleId);
     
     if (index > -1) {
 
-        items.index.id = itemId;
+        bundles.index.id = bundleId;
 
-        item.index.name = updatedItem;
+        bundle.index.name = updatedBundle;
 
-        console.log("Your item ha been updated");
+        console.log("Your bundle ha been updated");
 
-        return items
+        return bundles
     } else {
-        console.log("We could not find an item with that id")
+        console.log("We could not find an bundle with that id")
                 }
 }*/
  
