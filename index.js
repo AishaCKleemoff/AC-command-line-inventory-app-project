@@ -1,48 +1,55 @@
 const { readJSONFile, writeJSONFile } = require("./src/helpers");
 const {
     create,
-    index,
-    show,
-    destroy,
-    update,
-    inventory
-} = require("./src/inventoryController")
+    // index,
+    // show,
+    // destroy,
+    // update
+} = require("./src/bundlesController")
 
+const inform = console.log;
 
-const run = () => {
+function run() {
 
     const action = process.argv[2];
 
-    const item = process.argv[3];
+    const bundle = process.argv[3];
     
-    let items = readJSONFile("./data", "inventory.json")
+    let bundles = readJSONFile("data", "bundles.json");
 
     let writeToFile = false;
-    let updatedItems = [];
+    let updatedBundles = [];
 
     switch (action) {
-        case "index":
-            const allItems = index(items)
-            console.log(allItems);
-            break;
+        // case "index":
+        //     const allBundles = index(bundles)
+        //     inform(allBundles);
+        //     break;
         case "create":
-            console.log("New Item Created")
-            updatedItems = create(items, item)
+            inform("New Bundle Created")
+            updatedBundles = create(bundles, bundle)
             writeToFile = true;
             break;
-        case "show":
-            const foundItem = show(items, item)
-            console.log(foundItem)
-            break;
-        case "update":
-            console.log(item)
-            updatedItems = update(items, item, process.argv[4]);
-            writeToFile = true;
-            break;
-        case "destroy":
-            updatedItems = destroy(items, item);
-            writeToFile = true;
-            break;
+        // case "show":
+        //     const foundBundle = show(bundles, bundle)
+        //     inform(foundBundle)
+        //     break;
+        // case "update":
+        //     inform(bundle)
+        //     updatedBundles = update(bundles, bundle, process.argv[4]);
+        //     writeToFile = true;
+        //     break;
+        // case "destroy":
+        //     updatedBundles = destroy(bundles, bundle);
+        //     writeToFile = true;
+        //     break;
+        default: 
+            inform("There was an error");
+    }
+
+    if (writeToFile) {
+        inform("New Bundle detected - bundle is updating");
+        writeJSONFile ("./data", "bundles.json", updatedBundles);
     }
 }
 

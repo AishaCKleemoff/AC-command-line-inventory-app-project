@@ -1,16 +1,16 @@
-const { nanoid } = require("nanoid");
-const itemIventory = require("../data/inventory.json");
+const  { nanoid }  = require("nanoid");
 
-function create(items, itemName) {
-  const item = {
-    name: itemName,
+
+function create(bundles, bundleName) {
+  const bundle = {
+    name: bundleName,
     id: nanoid(4),
   };
-  items.push(item);
-  return items;
+  bundles.push(bundle);
+  return bundles;
 }
 
-function index(items) {
+/*function index(bundles) {
   return items.map((animals) => item.id + " " + item.name).join("\n");
 }
 
@@ -36,9 +36,9 @@ function update(items, itemId, updatedItem) {
     
     if (index > -1) {
 
-        items[index].id = itemId;
+        items.index.id = itemId;
 
-        item[index].name = updatedItem;
+        item.index.name = updatedItem;
 
         console.log("Your item ha been updated");
 
@@ -46,12 +46,12 @@ function update(items, itemId, updatedItem) {
     } else {
         console.log("We could not find an item with that id")
                 }
-}
+}*/
  
 module.exports = {
     create,
-    index,
-    show,
-    destroy,
-    update
+    // index,
+    // show,
+    // destroy,
+    // update
 }
