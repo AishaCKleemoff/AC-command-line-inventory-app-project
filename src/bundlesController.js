@@ -16,12 +16,12 @@ function create(bundles, bundleName, bundlePrice, bundleAvailability, bundleColo
 }
 
 function index(bundles) {
-  return bundles.map((bundles) => `${bundle.id} ${bundle.name}`).join("\n");
+  return bundles.map((bundle) => `${bundle.id} ${bundle.name}`).join("\n");
 }
 
 function show(bundles, bundleId) {
   const foundBundle = bundles.find((bundle) => bundle.id === bundleId);
-  return foundBundle.id + " " + foundBundle.name;
+  return `${foundBundle.id}  ${foundBundle.name}`;
 }
 function destroy(bundles, bundleId) {
   const index = bundles.findIndex((bundle) => bundle.id === bundleId);
