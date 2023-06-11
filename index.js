@@ -3,8 +3,8 @@ const {
     create,
      index,
      show,
-    // destroy,
-    // update
+    //  destroy,
+    //  update
 } = require("./src/bundlesController")
 
 const inform = console.log;
@@ -30,26 +30,26 @@ function run() {
 
     switch (action) {
          case "index":
-             const allBundles = index(bundles)
-             inform(`${allBundles}`);
+             const viewBundles = index(bundles)
+             inform(`${viewBundles}`);
              break;
         case "create":
             updatedBundles = create(bundles, bundle, bundlePrice, bundleAvailability, bundleColor) 
             writeToFile = true;
             break;
          case "show":
-             const foundBundle = show(bundles, bundle, bundlePrice, bundleAvailability, bundleColor)
-             inform(foundBundle)
+             const viewBundle = show(bundles, bundle)
+             inform(viewBundle)
              break;
-         case "update":
-             inform(bundle)
-             updatedBundles = update(bundles, bundle, process.argv[4]);
-             writeToFile = true;
-             break;
-         case "destroy":
-             updatedBundles = destroy(bundles, bundle);
-             writeToFile = true;
-             break;
+        //  case "update":
+        //      inform(bundle)
+        //      updatedBundles = update(bundles, bundle, process.argv[4]);
+        //      writeToFile = true;
+        //      break;
+        //  case "destroy":
+        //      updatedBundles = destroy(bundles, bundle);
+        //      writeToFile = true;
+        //      break;
         default: 
             inform("There was an error");
     }
