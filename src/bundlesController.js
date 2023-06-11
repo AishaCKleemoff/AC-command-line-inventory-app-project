@@ -20,8 +20,8 @@ function index(bundles) {
 }
 
 function show(bundles, bundleId) {
-  const foundBundle = bundles.find((bundle) => bundle.id === bundleId);
-  return `${foundBundle.id}  ${foundBundle.name}`;
+  const bundle = bundles.find((bundle) => bundle.id === bundleId);
+  return ` ${bundle.id}  ${bundle.name} ${bundle.priceInCents} ${bundle.inStock} ${bundle.color}`;
 }
 function destroy(bundles, bundleId) {
   const index = bundles.findIndex((bundle) => bundle.id === bundleId);
@@ -56,7 +56,7 @@ function update(bundles, bundleId, updatedBundle) {
 module.exports = {
     create,
      index,
-    // show,
+     show,
     // destroy,
     // update
 }

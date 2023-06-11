@@ -2,7 +2,7 @@ const { readJSONFile, writeJSONFile } = require("./src/helpers");
 const {
     create,
      index,
-    // show,
+     show,
     // destroy,
     // update
 } = require("./src/bundlesController")
@@ -15,11 +15,11 @@ function run() {
 
     const bundle = process.argv[3];
 
-    const priceInCents = process.argv[4];
+    const bundlePrice = process.argv[4];
 
-    const inStock = process.argv[5];
-
-    const color = process.argv[6];
+    const bundleAvailability = process.argv[5];
+    
+    const bundleColor = process.argv[6];
     
     let bundles = readJSONFile("data", "bundles.json");
 
@@ -31,15 +31,14 @@ function run() {
     switch (action) {
          case "index":
              const allBundles = index(bundles)
-             inform(allBundles);
+             inform(`${allBundles}`);
              break;
         case "create":
-            inform("New Bundle Created")
-            updatedBundles = create(bundles, bundle)
+            updatedBundles = create(bundles, bundle, bundlePrice, bundleAvailability, bundleColor) 
             writeToFile = true;
             break;
          case "show":
-             const foundBundle = show(bundles, bundle)
+             const foundBundle = show(bundles, bundle, bundlePrice, bundleAvailability, bundleColor)
              inform(foundBundle)
              break;
          case "update":
