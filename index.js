@@ -1,7 +1,7 @@
 const { readJSONFile, writeJSONFile } = require("./src/helpers");
 const {
     create,
-    // index,
+     index,
     // show,
     // destroy,
     // update
@@ -14,11 +14,19 @@ function run() {
     const action = process.argv[2];
 
     const bundle = process.argv[3];
+
+    const priceInCents = process.argv[4];
+
+    const inStock = process.argv[5];
+
+    const color = process.argv[6];
     
     let bundles = readJSONFile("data", "bundles.json");
 
     let writeToFile = false;
     let updatedBundles = [];
+
+    inform("Bundle 💈 World Inventory App 📱")
 
     switch (action) {
          case "index":

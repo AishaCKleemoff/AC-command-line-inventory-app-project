@@ -1,17 +1,22 @@
-const  { nanoid }  = require("nanoid");
+const { nanoid } = require("nanoid");
+
+const inform = console.log;
 
 
-function create(bundles, bundleName) {
+function create(bundles, bundleName, bundlePrice, bundleAvailability, bundleColor) {
   const bundle = {
     name: bundleName,
     id: nanoid(4),
+    priceInCents: Number(bundlePrice),
+    inStock: JSON.parse(bundleAvailability),
+    color: bundleColor
   };
   bundles.push(bundle);
   return bundles;
 }
 
-/*function index(bundles) {
-  return bundles.map((animals) => bundle.id + " " + bundle.name).join("\n");
+function index(bundles) {
+  return bundles.map((bundles) => `${bundle.id} ${bundle.name}`).join("\n");
 }
 
 function show(bundles, bundleId) {
@@ -46,11 +51,11 @@ function update(bundles, bundleId, updatedBundle) {
     } else {
         console.log("We could not find an bundle with that id")
                 }
-}*/
+}
  
 module.exports = {
     create,
-    // index,
+     index,
     // show,
     // destroy,
     // update
